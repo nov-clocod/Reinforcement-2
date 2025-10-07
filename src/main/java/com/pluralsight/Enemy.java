@@ -41,4 +41,12 @@ public class Enemy {
     public void setDamage(int damage) {
         this.damage = damage;
     }
+
+    public void attack(Character character) {
+        int playerHealth = character.getHealth() - this.damage;
+    }
+
+    public void attack(Character character, int specialAbilityMultiplier) {
+        int playerHealth = character.getHealth() - this.damage * specialAbilityMultiplier;
+    }
 }
