@@ -3,8 +3,8 @@ package com.pluralsight;
 public class Character {
     private String name;
     private int health;
-    private String strength;
-    private String agility;
+    private int strength;
+    private int agility;
 
     public Character(String name, String strength, String agility) {
         this.health = 100;
@@ -12,8 +12,8 @@ public class Character {
 
     public Character(String name) {
         this.health = 100;
-        this.strength = "";
-        this.agility = "";
+        this.strength = 0;
+        this.agility = 0;
     }
 
     public String getName() {
@@ -36,19 +36,19 @@ public class Character {
         }
     }
 
-    public String getStrength() {
+    public int getStrength() {
         return this.strength;
     }
 
-    public void setStrength(String strength) {
+    public void setStrength(int strength) {
         this.strength = strength;
     }
 
-    public String getAgility() {
+    public int getAgility() {
         return this.agility;
     }
 
-    public void setAgility(String agility) {
+    public void setAgility(int agility) {
         this.agility = agility;
     }
 
@@ -69,5 +69,13 @@ public class Character {
         statuses.append("Agility: \n");
 
         return statuses.toString();
+    }
+
+    public void attack(Enemy enemy) {
+        int enemyHealth = enemy.getHealth() - this.strength;
+    }
+
+    public void attack(Enemy enemy, int weaponMultiplier) {
+        int enemyHealth = enemy.getHealth() - this.strength * weaponMultiplier;
     }
 }
