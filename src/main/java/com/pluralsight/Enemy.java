@@ -6,12 +6,15 @@ public class Enemy {
     private int damage;
 
     public Enemy(String name, int damage) {
+        this.name = name;
         this.health = 100;
+        this.damage = damage;
     }
 
     public Enemy(String name) {
+        this.name = name;
         this.health = 100;
-        this.damage = 0;
+        this.damage = 15;
     }
 
     public String getName() {
@@ -43,10 +46,10 @@ public class Enemy {
     }
 
     public void attack(Character character) {
-        int playerHealth = character.getHealth() - this.damage;
+        character.setHealth(character.getHealth() - this.damage);
     }
 
     public void attack(Character character, int specialAbilityMultiplier) {
-        int playerHealth = character.getHealth() - this.damage * specialAbilityMultiplier;
+        character.setHealth(character.getHealth() - this.damage * specialAbilityMultiplier);
     }
 }

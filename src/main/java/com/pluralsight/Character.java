@@ -77,10 +77,10 @@ public class Character {
     }
 
     public void attack(Enemy enemy) {
-        int enemyHealth = enemy.getHealth() - this.strength;
+         enemy.setHealth(enemy.getHealth() - this.strength);
     }
 
     public void attack(Enemy enemy, int weaponMultiplier) {
-        int enemyHealth = enemy.getHealth() - this.strength * weaponMultiplier;
+        enemy.setHealth(enemy.getHealth() - this.strength * weaponMultiplier);
     }
 }
