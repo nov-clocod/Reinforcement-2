@@ -6,14 +6,19 @@ public class Character {
     private int strength;
     private int agility;
 
-    public Character(String name, String strength, String agility) {
+    public Character(String name, int strength, int agility) {
+        this.name = name;
         this.health = 100;
+        this.strength = strength;
+        this.agility = agility;
+
     }
 
     public Character(String name) {
+        this.name = name;
         this.health = 100;
-        this.strength = 0;
-        this.agility = 0;
+        this.strength = 20;
+        this.agility = 20;
     }
 
     public String getName() {
@@ -52,8 +57,8 @@ public class Character {
         this.agility = agility;
     }
 
-    public String getDescription(String name) {
-        return name.substring(0,1).toUpperCase() + name.substring(1);
+    public String getDescription() {
+        return name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();
     }
 
     public String getHealthStatus() {
@@ -63,10 +68,10 @@ public class Character {
     public String getFullStatus() {
         StringBuilder statuses = new StringBuilder();
 
-        statuses.append("Name: \n");
-        statuses.append("Health: \n");
-        statuses.append("Strength: \n");
-        statuses.append("Agility: \n");
+        statuses.append("Name: ").append(getDescription()).append("\n");
+        statuses.append("Health: ").append(getHealthStatus()).append("\n");
+        statuses.append("Strength: ").append(this.strength).append("\n");
+        statuses.append("Agility: ").append(this.agility);
 
         return statuses.toString();
     }
