@@ -62,7 +62,7 @@ public class Character {
     }
 
     public String getHealthStatus() {
-        return this.health + " HP";
+        return this.name + " has " + this.health + " HP";
     }
 
     public String getFullStatus() {
