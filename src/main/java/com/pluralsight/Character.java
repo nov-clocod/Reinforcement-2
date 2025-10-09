@@ -77,10 +77,14 @@ public class Character {
     }
 
     public void attack(Enemy enemy) {
-         enemy.setHealth(enemy.getHealth() - this.strength);
+        enemy.setHealth(enemy.getHealth() - this.strength);
+        System.out.println(this.name + " dealt " + this.strength + " to " + enemy.getName());
     }
 
     public void attack(Enemy enemy, int weaponMultiplier) {
-        enemy.setHealth(enemy.getHealth() - this.strength * weaponMultiplier);
+        int multiplierDamage = (int) this.strength * weaponMultiplier;
+        enemy.setHealth(enemy.getHealth() - multiplierDamage);
+        System.out.println("Critical damage with a " + weaponMultiplier + "x multiplier to " + enemy.getName());
+
     }
 }
