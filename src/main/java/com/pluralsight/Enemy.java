@@ -30,10 +30,8 @@ public class Enemy {
     }
 
     public void setHealth(int health) {
-        if (health > 0) {
+        if (health >= 0) {
             this.health = health;
-        } else {
-            System.out.println("You are dead!");
         }
     }
 

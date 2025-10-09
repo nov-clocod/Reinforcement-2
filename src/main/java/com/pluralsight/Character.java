@@ -34,10 +34,8 @@ public class Character {
     }
 
     public void setHealth(int health) {
-        if (health > 0) {
+        if (health >= 0) {
             this.health = health;
-        } else {
-            System.out.println("You are dead!");
         }
     }
 
@@ -77,7 +75,6 @@ public class Character {
     }
 
     public void attack(Enemy enemy) {
-        enemy.setHealth(enemy.getHealth() - this.strength);
         System.out.println(this.name + " dealt " + this.strength + " to " + enemy.getName());
     }
 
