@@ -1,7 +1,5 @@
 package com.pluralsight;
 
-import java.sql.Array;
-
 public class Main {
     public static void main(String[] args) {
         Character commonOne = new Character("Helix");
@@ -10,7 +8,7 @@ public class Main {
 
         for (int i = 0; i < enemyGenerator.length; i++) {
             int randomDamage = (int) (Math.random() * (15 - 5 + 1)) + 5;
-            enemyGenerator[i] = new Enemy("Enemy " + (i++), randomDamage);
+            enemyGenerator[i] = new Enemy("Enemy " + (i + 1), randomDamage);
         }
 
         battle(commonOne, enemyGenerator);
