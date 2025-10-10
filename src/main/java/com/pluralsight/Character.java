@@ -66,6 +66,7 @@ public class Character {
     public String getFullStatus() {
         StringBuilder statuses = new StringBuilder();
 
+        System.out.println();
         statuses.append("Name: ").append(getDescription()).append("\n");
         statuses.append("Health: ").append(getHealthStatus()).append("\n");
         statuses.append("Strength: ").append(this.strength).append("\n");

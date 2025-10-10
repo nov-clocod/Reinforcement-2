@@ -3,6 +3,7 @@ package com.pluralsight;
 public class Main {
     public static void main(String[] args) {
         Character commonOne = new Character("Helix");
+        System.out.println("Starting full status of character: "+ commonOne.getFullStatus());
 
         Enemy[] enemyGenerator = new Enemy[5];
 
@@ -12,6 +13,7 @@ public class Main {
         }
 
         battle(commonOne, enemyGenerator);
+        System.out.println("Final full status of character: "+ commonOne.getFullStatus());
     }
 
     public static void battle(Character character, Enemy[] enemies) {
@@ -31,7 +33,7 @@ public class Main {
                 System.out.println(enemy.getName() + " have " + enemy.getHealth() + " HP");
 
                 if (enemy.getHealth() <= 0) {
-                    System.out.println(enemy.getName() + "is XoX");
+                    System.out.println(enemy.getName() + " is XoX");
                     break;
                 }
 
